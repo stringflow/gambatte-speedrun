@@ -1,7 +1,6 @@
 *.*.swp
 *.o
 .scon*
-*.a
 config.log
 *.gb
 *.gbc

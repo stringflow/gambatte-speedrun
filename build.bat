@@ -1,0 +1,1 @@
+go build -tags static,exclude_cimgui_glfw,exclude_cimgui_sdli -ldflags "-s -w" && .\gambatte-speedrun.exe
