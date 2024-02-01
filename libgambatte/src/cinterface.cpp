@@ -44,7 +44,10 @@ GBEXPORT int gambatte_loadbios(GB *g, char const *biosfile, unsigned size, unsig
 }
 
 GBEXPORT int gambatte_runfor(GB *g, unsigned *videoBuf, int pitch, unsigned *audioBuf, unsigned *samples) {
-	return g->runFor(videoBuf, pitch, audioBuf, *(std::size_t *)samples);
+	std::size_t samps = *samples;
+	int ret = g->runFor(videoBuf, pitch, audioBuf, samps);
+	*samples = samps;
+	return ret;
 }
 
 GBEXPORT void gambatte_setrtcdivisoroffset(GB *g, int rtcDivisorOffset) {
